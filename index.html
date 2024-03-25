@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Personalice su Contraseña</h1>
+        
+        <h2>Longitud de la Contraseña</h2>
+        <div class="length-container">
+            <input type="number" id="password-length" value="12" min="1" max="50">
+            <input type="range" id="password-length-range" value="12" min="1" max="50">
+        </div>
+        <div class="strength-container">
+            <h2>Solidez de la Contraseña</h2>
+            <p id="password-strength">Poco segura</p>
+        </div>
+        
+        <div class="password-container">
+            <input type="text" id="password" readonly>
+            <button id="reset-btn">Reset</button>
+            <button id="generate-btn">Generar Contraseña</button>
+            <button id="copy-btn">Copiar Contraseña</button>
+        </div>
+    </div>
+    <div class="options-container">
+        <h2>Opciones de Contraseña</h2>
+        <div class="option">
+            <input  type="checkbox" id="include-letter" checked>
+            <label  for="include-letter">Letras (a-z)</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="include-uppercase" checked>
+            <label for="include-uppercase">Mayúsculas (A-Z)</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="include-lowercase" checked>
+            <label for="include-lowercase">Minúsculas (a-z)</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="include-number" checked>
+            <label for="include-number">Números (0-9)</label>
+        </div>
+        <div class="option">
+            <input type="checkbox" id="include-symbol" checked>
+            <label for="include-symbol">Símbolos (!@#$%^&*()_-+=)</label>
+        </div>
+    </div>
+    <button id="dark-mode-btn">Modo Oscuro/Claro</button>
+
+    <script src="main.js"></script>
+</body>
+</html>
+

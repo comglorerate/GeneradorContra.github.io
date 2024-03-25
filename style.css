@@ -1,0 +1,255 @@
+:root {
+    --background-color-light: #fff; /* Color de fondo en modo claro */
+    --background-color-dark: #333; /* Color de fondo en modo oscuro */
+    --text-color-light: #333; /* Color de texto en modo claro */
+    --text-color-dark: #fff; /* Color de texto en modo oscuro */
+    /* Otras variables de colores */
+}
+/* Estilos base */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-color: var(--background-color-light); /* Fondo por defecto */
+    color: var(--text-color-light); /* Texto por defecto */
+}
+/* Estilos para el modo claro */
+.light-mode {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+}
+
+/* Estilos para el modo oscuro */
+.dark-mode {
+    background-color: #000000; /* Fondo negro */
+    color: #ffffff; /* Texto blanco */
+}
+
+.container {
+    text-align: center;
+    max-width: 80%;
+    width: 400px; /* Tamaño predeterminado */
+}
+
+/* Estilos para pantallas más pequeñas (teléfonos) */
+@media (max-width: 600px) {
+    .container {
+        width: 80%; /* Ajustar el ancho */
+    }
+}
+
+/* Estilos para tabletas y pantallas más grandes */
+@media (min-width: 601px) {
+    .container {
+        width: 70%; /* Ajustar el ancho */
+    }
+
+    .strength-container {
+        margin-top: 20px; /* Mantener el margen superior */
+        text-align: center; /* Centrar la opción de solidez de la contraseña */
+    }
+}
+
+/* Estilos para laptops y pantallas más grandes */
+@media (min-width: 901px) {
+    .container {
+        width: 60%; /* Ajustar el ancho */
+    }
+}
+
+
+/* Estilos adicionales */
+.length-container {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#password {
+    width: calc(100% - 110px); /* Ajustar el ancho para dejar espacio para el botón */
+    padding: 10px;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    float: left; /* Alineación a la izquierda */
+}
+/* Estilos para la solidez de la contraseña */
+.password-strength {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: 'Roboto';
+}
+
+.poco-segura {
+    background-color: #f44336; /* Rojo */
+}
+
+.adecuada {
+    background-color: #ff9800; /* Naranja */
+}
+
+.segura {
+    background-color: #4caf50; /* Verde */
+}
+
+.muy-segura {
+    background-color: #2196f3; /* Azul */
+}
+
+#reset-btn {
+    padding: 10px 20px;
+    margin-top: 23px;
+    background-color: #f44336; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    float: right; /* Alineación a la derecha */
+}
+
+/* Cambiar el color del botón al pasar el cursor */
+#reset-btn:hover {
+    background-color: #d32f2f; /* Color de fondo al pasar el cursor */
+}
+#password-length {
+    width: 60px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+#password-length-range {
+    width: 200px;
+    margin-right: 10px;
+}
+#generate-btn {
+    margin-top: 10px; /* Separación entre el input de contraseña y el botón */
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generate-btn:hover {
+    background-color: #0b7dda; /* Cambio de color al pasar el cursor */
+}
+#copy-btn {
+    margin-top: 10px; /* Separación entre el botón de generar contraseña y el botón de copiar contraseña */
+    margin-left: 10px; /* Separación entre los botones */
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#copy-btn:hover {
+    background-color: #45a049; /* Cambio de color al pasar el cursor */
+}
+.options-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.option {
+    margin-bottom: 10px;
+}
+
+.option label {
+    margin-left: 5px;
+    
+}
+
+.strength-container {
+    margin-top: 20px;
+}
+
+/* Estilos para checkboxes */
+.option input[type="checkbox"] {
+    display: none; /* Ocultar el input original */
+}
+
+/* Estilos para la apariencia personalizada del checkbox */
+.option label {
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* Estilos para el ícono del checkbox */
+.option label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #bbb;
+    background-color: #fff;
+    border-radius: 5px; /* Agregamos bordes redondeados */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Estilos para el ícono del checkbox cuando está marcado */
+.option input[type="checkbox"]:checked + label:before {
+    background-color: #2196F3; /* Color de fondo cuando está marcado */
+    border-color: #2196F3; /* Color del borde cuando está marcado */
+}
+
+/* Estilos para la marca de verificación del checkbox */
+.option label:after {
+    content: "\2713"; /* Unicode para la marca de verificación */
+    font-size: 16px;
+    color: #fff; /* Color de la marca de verificación */
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Estilos para la marca de verificación del checkbox cuando está marcado */
+.option input[type="checkbox"]:checked + label:after {
+    opacity: 1; /* Mostrar la marca de verificación cuando está marcado */
+}
+/* Estilos para checkboxes */
+.option input[type="checkbox"] {
+    display: none; /* Ocultar el input original */
+}
+/* Estilos mejorados para el botón de modo oscuro/claro */
+#dark-mode-btn {
+    background-color: #333333; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #ffffff; /* Borde blanco */
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#dark-mode-btn:hover {
+    background-color: #ffffff; /* Fondo blanco al pasar el ratón */
+    color: #333333; /* Texto oscuro al pasar el ratón */
+    border-color: #333333; /* Borde oscuro al pasar el ratón */
+}
+
